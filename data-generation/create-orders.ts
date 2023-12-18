@@ -5,16 +5,16 @@ const NUM_ORDERS_TO_GENERATE = 1000;
 //generate orders
 const orders = Array.from({ length: NUM_ORDERS_TO_GENERATE }, () => {
   const items = Array.from(
-    { length: faker.datatype.number({ min: 1, max: 5 }) },
+    { length: faker.number.int({ min: 1, max: 5 }) },
     () => ({
       name: faker.commerce.product(),
-      quantity: faker.datatype.number({ min: 1, max: 10 }),
+      quantity: faker.number.int({ min: 1, max: 10 }),
       price: faker.datatype.float({ min: 1, max: 1000, precision: 0.01 }),
     })
   );
 
   const products = Array.from(
-    { length: faker.datatype.number({ min: 1, max: 5 }) },
+    { length: faker.number.int({ min: 1, max: 5 }) },
     () => faker.commerce.product()
   );
 
